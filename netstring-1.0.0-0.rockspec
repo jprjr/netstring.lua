@@ -12,7 +12,7 @@ description = {
 build = {
     type = "builtin",
     modules = {
-        netstring = "netstring.lua"
+        netstring = "src/netstring.lua"
     }
 }
 dependencies = {
