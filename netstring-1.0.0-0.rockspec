@@ -1,7 +1,7 @@
 package = "netstring"
 version = "1.0.0-0"
 source = {
-    url = "git://github.com/jprjr/netstring.lua",
+    url = "git://github.com/jprjr/netstring.lua.git",
     tag = "1.0.0"
 }
 description = {
