@@ -1,4 +1,4 @@
--- Copyright 2016 John Regan <john@jrjrtech.com
+-- Copyright 2016 John Regan <john@jrjrtech.com>
 
 local string_sub = string.sub
 local string_len = string.len
