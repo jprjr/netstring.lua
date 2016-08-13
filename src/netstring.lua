@@ -81,7 +81,7 @@ function M.encode(...)
     local err = {}
     local args = {...}
 
-    for i=1, #args do
+    for i in pairs(args) do
         local a = args[i]
         local ta = type(a)
         if ta == 'table' then
