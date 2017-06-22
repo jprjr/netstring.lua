@@ -19,7 +19,7 @@ function _decode(a)
         end
     until ( t<0 or t>9 or i > max_len )
 
-    if (len == 0 or i > max_len) then
+    if (i > max_len) then
         return nil, nil
     end
 
@@ -36,6 +36,10 @@ function _decode(a)
     -- ascii 44 == comma
     if(string_byte(a,i+len) ~= 44) then
         return nil, nil
+    end
+
+    if(len == 0) then
+      return i, ''
     end
 
     return i+len, string_sub(a,i,i+len - 1)
