@@ -9,15 +9,17 @@ local M = {}
 function _decode(a)
     local i=1
     local len = 0;
+    local max_len = string_len(a)
+
     repeat
         local t = string_byte(a,i) - 48
         if(t >= 0 and t<=9) then
             len = (len * 10) + t
             i = i + 1
         end
-    until ( t<0 or t>9 )
+    until ( t<0 or t>9 or i > max_len )
 
-    if (len == 0) then
+    if (len == 0 or i > max_len) then
         return nil, nil
     end
 
@@ -27,7 +29,7 @@ function _decode(a)
     end
     i = i + 1
 
-    if(i+len > #a) then
+    if(i+len > max_len) then
         return nil, nil
     end
 
