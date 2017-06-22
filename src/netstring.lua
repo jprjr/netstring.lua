@@ -4,9 +4,11 @@ local string_sub = string.sub
 local string_len = string.len
 local string_byte = string.byte
 
-local M = {}
+local M = {
+  _VERSION = '1.0.6'
+}
 
-function _decode(a)
+local function _decode(a)
     local i=1
     local len = 0;
     local max_len = string_len(a)
@@ -45,11 +47,11 @@ function _decode(a)
     return i+len, string_sub(a,i,i+len - 1)
 end
 
-function _encode(a)
+local function _encode(a)
     return string_len(a) .. ':' .. a .. ','
 end
 
-function _order(a,b)
+local function _order(a,b)
     local ta = type(a)
     local tb = type(b)
     if(ta == "number" and tb == "number") then
@@ -66,7 +68,7 @@ end
 function M.decode(a)
     local i = 1
     local results = {}
-    local remains
+
     while(i<#a) do
         local j,val = _decode(string_sub(a,i))
          if j then
@@ -95,7 +97,7 @@ function M.encode(...)
             local keys = {}
             for k in pairs(a) do keys[#keys+1] = k end
             table.sort(keys,_order)
-            for j,k in ipairs(keys) do
+            for _,k in ipairs(keys) do
                 if(type(k) ~= "number") then
                     table.insert(err,'arg ' .. i .. ' key "' .. k .. '" is not numeric')
                 else
