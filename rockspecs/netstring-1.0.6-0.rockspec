@@ -1,8 +1,8 @@
 package = "netstring"
-version = "1.0.5-0"
+version = "1.0.6-0"
 source = {
-    url = "https://github.com/jprjr/netstring.lua/archive/1.0.5.tar.gz",
-    file = "netstring.lua-1.0.5.tar.gz",
+    url = "https://github.com/jprjr/netstring.lua/archive/1.0.6.tar.gz",
+    file = "netstring.lua-1.0.6.tar.gz",
 }
 description = {
     summary = "Implementation of DJB's netstring for lua",
